@@ -5,7 +5,6 @@
 const audioCtx = new AudioContext();
 const analyzer = audioCtx.createAnalyser();
 SourceBuffer.connect(analyzer);
-analyzer.connect(distortion);
 distortion.connect(audioCtx.destination);
 // make a canvas that displays audio in a visual way
 const canvas = document.querySelector(".visualizer"); // select canvas
