@@ -1,5 +1,7 @@
 // make a visualizer for audio
 // https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Visualizations_with_Web_Audio_API
+
+// also check https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Basic_usage
 const audioCtx = new AudioContext();
 const analyzer = audioCtx.createAnalyser();
 SourceBuffer.connect(analyzer);
@@ -33,21 +35,21 @@ function draw() {
 draw();
 // make a button that plays the audio
 const playButton = document.querySelector(".play");
-playButton.addEventListener("click", function() {
+playButton.addEventListener("click", function () {
   audioCtx.resume().then(() => {
     console.log("Playback resumed successfully");
   });
 });
 // make a button that pauses the audio
 const pauseButton = document.querySelector(".pause");
-pauseButton.addEventListener("click", function() {
+pauseButton.addEventListener("click", function () {
   audioCtx.suspend().then(() => {
     console.log("Playback paused successfully");
   });
 });
 // make a button that stops the audio
 const stopButton = document.querySelector(".stop");
-stopButton.addEventListener("click", function() {
+stopButton.addEventListener("click", function () {
   audioCtx.close().then(() => {
     console.log("Playback stopped successfully");
   });
